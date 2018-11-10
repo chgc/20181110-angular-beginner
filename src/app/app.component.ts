@@ -8,10 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   appTitle = 'Todos';
   placeholderText = 'What needs to be done???';
-
-  newTodo(event, inputElement) {
-    if (event.code === 'Enter') {
-      console.log(inputElement.value);
-    }
+  background = 'yellow';
+  newTodo(inputElement) {
+    console.log(inputElement.value);
   }
 }

@@ -5,7 +5,8 @@
       class="new-todo"
       [placeholder]="placeholderText"
       #todo
-      (keyup)="newTodo($event, todo)"
+      [style.background-color]="background"
+      (keyup.enter)="newTodo(todo)"
       autofocus
     />
   </header>
