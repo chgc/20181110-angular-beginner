@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +11,11 @@ export class AppComponent {
   placeholderText = 'What needs to be done???';
   background = 'yellow';
 
-  todos = [];
+  todos = this.dataService.todos;
 
   todoValue;
+
+  constructor(private dataService: DataService) {}
 
   newTodo(inputElement) {
     // 使用樣版變數
@@ -20,19 +23,16 @@ export class AppComponent {
     // inputElement.value = '';
 
     // 使用 ngModel 的值
-    this.todos.push({
-      label: this.todoValue,
-      isCompleted: false
-    });
+    this.dataService.newTodo(this.todoValue);
     this.todoValue = '';
   }
 
   toggleComplete(todo) {
-    todo.isCompleted = !todo.isCompleted;
+    this.dataService.toggleComplete(todo);
   }
 
   completeAll() {
-    this.todos.forEach(todo => (todo.isCompleted = true));
+    this.dataService.completeAll();
   }
 
   removeTodo(idx, todo) {
@@ -42,5 +42,6 @@ export class AppComponent {
     // this.todos = this.todos.filter(_todo => _todo !== todo);
     // 方法3
     // this.todos.splice(idx, 1);
+    this.dataService.removeTodo(idx);
   }
 }
