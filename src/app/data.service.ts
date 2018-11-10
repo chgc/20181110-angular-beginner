@@ -32,4 +32,8 @@ export class DataService {
     // 方法3
     this.todos.splice(idx, 1);
   }
+
+  clearComplete() {
+    this.todos = this.todos.filter(todo => todo.isCompleted === false);
+  }
 }

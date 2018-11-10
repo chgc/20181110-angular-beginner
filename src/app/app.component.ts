@@ -10,9 +10,6 @@ export class AppComponent {
   appTitle = 'Todos';
   placeholderText = 'What needs to be done???';
   background = 'yellow';
-
-  todos = this.dataService.todos;
-
   todoValue;
 
   constructor(public dataService: DataService) {}
@@ -37,5 +34,9 @@ export class AppComponent {
 
   removeTodo(idx, todo) {
     this.dataService.removeTodo(idx);
+  }
+
+  clearComplete() {
+    this.dataService.clearComplete();
   }
 }
