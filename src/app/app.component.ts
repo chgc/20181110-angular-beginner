@@ -20,7 +20,10 @@ export class AppComponent {
     // inputElement.value = '';
 
     // 使用 ngModel 的值
-    this.todos.push(this.todoValue);
+    this.todos.push({
+      label: this.todoValue,
+      isCompleted: false
+    });
     this.todoValue = '';
   }
 }
