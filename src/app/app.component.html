@@ -1,6 +1,6 @@
 <section class="todoapp">
   <header class="header">
-    <h1>{{ appTitle }} - {{ todoValue }}</h1>
+    <h1>{{ appTitle }}</h1>
     <input
       class="new-todo"
       [placeholder]="placeholderText"
@@ -15,7 +15,7 @@
     This section should be hidden by default and shown when there are todos
   -->
   <section class="main" *ngIf="todos.length > 0">
-    <input class="toggle-all" type="checkbox" />
+    <input class="toggle-all" type="checkbox" (change)="completeAll()" />
     <label for="toggle-all">Mark all as complete</label>
     <ul class="todo-list">
       <!-- These are here just to show the structure of the list items -->

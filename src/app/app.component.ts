@@ -30,4 +30,8 @@ export class AppComponent {
   toggleComplete(todo) {
     todo.isCompleted = !todo.isCompleted;
   }
+
+  completeAll() {
+    this.todos.forEach(todo => (todo.isCompleted = true));
+  }
 }
