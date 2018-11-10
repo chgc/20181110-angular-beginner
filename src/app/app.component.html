@@ -23,7 +23,7 @@
         List items should get the class `editing` when editing and `completed` when marked as completed
       -->
       <li
-        *ngFor="let todo of todos"
+        *ngFor="let todo of todos; let idx = index"
         [ngClass]="{ completed: todo.isCompleted }"
       >
         <div class="view">
@@ -33,7 +33,8 @@
             [checked]="todo.isCompleted"
             (change)="toggleComplete(todo)"
           />
-          <label>{{ todo.label }}</label> <button class="destroy"></button>
+          <label>{{ todo.label }}</label>
+          <button class="destroy" (click)="removeTodo(idx, todo)"></button>
         </div>
         <input class="edit" value="Create a TodoMVC template" />
       </li>
