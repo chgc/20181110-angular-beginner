@@ -5,6 +5,10 @@ export class DataService {
   todos = [];
   constructor() {}
 
+  get itemLeft() {
+    return this.todos.filter(x => x.isCompleted === false).length;
+  }
+
   newTodo(todo) {
     this.todos.push({
       label: todo,

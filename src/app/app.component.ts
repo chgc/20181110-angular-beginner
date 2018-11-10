@@ -15,7 +15,7 @@ export class AppComponent {
 
   todoValue;
 
-  constructor(private dataService: DataService) {}
+  constructor(public dataService: DataService) {}
 
   newTodo(inputElement) {
     // 使用樣版變數
