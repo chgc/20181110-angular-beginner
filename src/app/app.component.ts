@@ -10,9 +10,17 @@ export class AppComponent {
   placeholderText = 'What needs to be done???';
   background = 'yellow';
 
+  todos = [];
+
   todoValue;
 
   newTodo(inputElement) {
-    console.log(inputElement.value);
+    // 使用樣版變數
+    // this.todos.push(inputElement.value);
+    // inputElement.value = '';
+
+    // 使用 ngModel 的值
+    this.todos.push(this.todoValue);
+    this.todoValue = '';
   }
 }
