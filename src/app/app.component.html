@@ -24,7 +24,12 @@
       -->
       <li *ngFor="let todo of todos">
         <div class="view">
-          <input class="toggle" type="checkbox" [checked]="todo.isCompleted" />
+          <input
+            class="toggle"
+            type="checkbox"
+            [checked]="todo.isCompleted"
+            (change)="toggleComplete(todo)"
+          />
           <label>{{ todo.label }}</label> <button class="destroy"></button>
         </div>
         <input class="edit" value="Create a TodoMVC template" />

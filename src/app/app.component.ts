@@ -26,4 +26,8 @@ export class AppComponent {
     });
     this.todoValue = '';
   }
+
+  toggleComplete(todo) {
+    todo.isCompleted = !todo.isCompleted;
+  }
 }
