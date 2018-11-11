@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'stateFilter'
+  name: 'stateFilter',
+  pure: false
 })
 export class StateFilterPipe implements PipeTransform {
   transform(value: any, state?: any): any {
