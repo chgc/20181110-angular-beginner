@@ -60,9 +60,27 @@
     >
     <!-- Remove this if you don't implement routing -->
     <ul class="filters">
-      <li><a class="selected" href="#/" (click)="state = ''">All</a></li>
-      <li><a href="#/active" (click)="state = 'active'">Active</a></li>
-      <li><a href="#/completed" (click)="state = 'completed'">Completed</a></li>
+      <li>
+        <a [class.selected]="state === ''" href="#/" (click)="state = ''"
+          >All</a
+        >
+      </li>
+      <li>
+        <a
+          [class.selected]="state === 'active'"
+          href="#/active"
+          (click)="state = 'active'"
+          >Active</a
+        >
+      </li>
+      <li>
+        <a
+          [class.selected]="state === 'completed'"
+          href="#/completed"
+          (click)="state = 'completed'"
+          >Completed</a
+        >
+      </li>
     </ul>
     <!-- Hidden if no completed items are left ↓ -->
     <button class="clear-completed" (click)="clearComplete()">
