@@ -11,6 +11,7 @@ export class AppComponent {
   placeholderText = 'What needs to be done???';
   background = 'yellow';
   todoValue;
+  state;
 
   constructor(public dataService: DataService) {}
 
